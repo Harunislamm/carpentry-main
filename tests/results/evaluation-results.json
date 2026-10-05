@@ -1,0 +1,174 @@
+{
+  "generatedAt": "2026-10-05T11:15:23.229Z",
+  "environment": {
+    "runner": "Node.js built-in assertion harness with ESM loader and mocked DB/external services",
+    "node": "v22.16.0",
+    "note": "Durations are in-process handler execution times with mocked dependencies; they are not production HTTP/network latency."
+  },
+  "total": 16,
+  "passed": 12,
+  "failed": 4,
+  "averageDurationMs": 0.866,
+  "results": [
+    {
+      "id": "AUTH-01",
+      "category": "Authentication",
+      "name": "New user registration returns 201 and hashes password",
+      "expected": "pass",
+      "actual": "pass",
+      "outcome": "PASS",
+      "durationMs": 4.655,
+      "detail": ""
+    },
+    {
+      "id": "AUTH-02",
+      "category": "Authentication",
+      "name": "Duplicate email registration is rejected",
+      "expected": "pass",
+      "actual": "pass",
+      "outcome": "PASS",
+      "durationMs": 0.396,
+      "detail": ""
+    },
+    {
+      "id": "AUTH-03",
+      "category": "Authentication",
+      "name": "Valid sign-in returns user and HttpOnly JWT cookie",
+      "expected": "pass",
+      "actual": "pass",
+      "outcome": "PASS",
+      "durationMs": 1.322,
+      "detail": ""
+    },
+    {
+      "id": "AUTH-04",
+      "category": "Authentication",
+      "name": "Unknown email returns generic 401 credentials error",
+      "expected": "pass",
+      "actual": "pass",
+      "outcome": "PASS",
+      "durationMs": 0.474,
+      "detail": ""
+    },
+    {
+      "id": "AUTH-05",
+      "category": "Authentication",
+      "name": "Wrong password returns the same generic 401 error",
+      "expected": "pass",
+      "actual": "pass",
+      "outcome": "PASS",
+      "durationMs": 1.139,
+      "detail": ""
+    },
+    {
+      "id": "ORD-01",
+      "category": "Order Management",
+      "name": "GET orders returns database result and requests newest-first sort",
+      "expected": "pass",
+      "actual": "pass",
+      "outcome": "PASS",
+      "durationMs": 0.819,
+      "detail": ""
+    },
+    {
+      "id": "ORD-02",
+      "category": "Order Management",
+      "name": "PATCH order updates status and returns updated order",
+      "expected": "pass",
+      "actual": "pass",
+      "outcome": "PASS",
+      "durationMs": 0.567,
+      "detail": ""
+    },
+    {
+      "id": "ORD-03",
+      "category": "Order Management",
+      "name": "Database failure while fetching orders returns 500",
+      "expected": "pass",
+      "actual": "pass",
+      "outcome": "PASS",
+      "durationMs": 0.221,
+      "detail": ""
+    },
+    {
+      "id": "AUTHZ-01",
+      "category": "Authorization",
+      "name": "Unauthenticated caller must not list all customer orders",
+      "expected": "pass",
+      "actual": "fail",
+      "outcome": "FAIL",
+      "durationMs": 0.615,
+      "detail": "Expected 401/403 but received 200"
+    },
+    {
+      "id": "AUTHZ-02",
+      "category": "Authorization",
+      "name": "Unauthenticated caller must not update an order status",
+      "expected": "pass",
+      "actual": "fail",
+      "outcome": "FAIL",
+      "durationMs": 0.441,
+      "detail": "Expected 401/403 but received 200"
+    },
+    {
+      "id": "AUTHZ-03",
+      "category": "Authorization",
+      "name": "Unauthenticated caller must not create a product through admin API",
+      "expected": "pass",
+      "actual": "fail",
+      "outcome": "FAIL",
+      "durationMs": 0.446,
+      "detail": "Expected 401/403 but received 201"
+    },
+    {
+      "id": "AUTHZ-04",
+      "category": "Authorization",
+      "name": "Unauthenticated caller must not delete a product through admin API",
+      "expected": "pass",
+      "actual": "fail",
+      "outcome": "FAIL",
+      "durationMs": 0.653,
+      "detail": "Expected 401/403 but received 200"
+    },
+    {
+      "id": "PAY-01",
+      "category": "Payment / Checkout",
+      "name": "Guest checkout fallback creates Pending order when Stripe is not configured",
+      "expected": "pass",
+      "actual": "pass",
+      "outcome": "PASS",
+      "durationMs": 0.499,
+      "detail": ""
+    },
+    {
+      "id": "PAY-02",
+      "category": "Payment / Checkout",
+      "name": "Authenticated fallback checkout uses customer identity from verified JWT",
+      "expected": "pass",
+      "actual": "pass",
+      "outcome": "PASS",
+      "durationMs": 0.289,
+      "detail": ""
+    },
+    {
+      "id": "PAY-03",
+      "category": "Payment / Checkout",
+      "name": "Invalid JWT does not crash checkout and falls back to guest identity",
+      "expected": "pass",
+      "actual": "pass",
+      "outcome": "PASS",
+      "durationMs": 1.076,
+      "detail": ""
+    },
+    {
+      "id": "PROD-01",
+      "category": "Validation",
+      "name": "Product creation rejects missing required fields",
+      "expected": "pass",
+      "actual": "pass",
+      "outcome": "PASS",
+      "durationMs": 0.236,
+      "detail": ""
+    }
+  ]
+}

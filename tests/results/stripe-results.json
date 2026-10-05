@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-10-05T11:15:53.815Z",
+  "total": 2,
+  "passed": 2,
+  "failed": 0,
+  "results": [
+    {
+      "id": "PAY-04",
+      "category": "Payment / Checkout",
+      "name": "Stripe checkout session maps cart data correctly and returns hosted URL",
+      "outcome": "PASS",
+      "durationMs": 3.606,
+      "detail": ""
+    },
+    {
+      "id": "PAY-05",
+      "category": "Payment / Checkout",
+      "name": "Stripe API failure is converted to HTTP 500 error response",
+      "outcome": "PASS",
+      "durationMs": 1.02,
+      "detail": ""
+    }
+  ]
+}
